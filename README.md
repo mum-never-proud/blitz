@@ -1,2 +1,2 @@
 # blitz
-DOM manipulation lib with minmal footprint
+DOM manipulation lib with minimal footprint
