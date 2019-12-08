@@ -5,7 +5,7 @@
   "main": "./src/blitz.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "test": "jest"
+    "test": "./node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
