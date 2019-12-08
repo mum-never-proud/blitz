@@ -1,4 +1,4 @@
-# blitz
+# blitz (slim version of jQuery)
 Learn JS Concepts by building your own jQuery like library :D
 
 <ul>
