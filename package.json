@@ -1,0 +1,37 @@
+{
+  "name": "blitz",
+  "version": "1.0.0",
+  "description": "lite version of jQuery",
+  "main": "./src/blitz.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mum-never-proud/blitz.git"
+  },
+  "keywords": [
+    "jQuery",
+    "javascript",
+    "dom",
+    "events",
+    "query",
+    "lite"
+  ],
+  "author": "mum-never-proud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mum-never-proud/blitz/issues"
+  },
+  "homepage": "https://github.com/mum-never-proud/blitz#readme",
+  "devDependencies": {
+    "@babel/core": "7.7.4",
+    "@babel/preset-env": "7.7.4",
+    "babel-loader": "8.0.6",
+    "jest": "24.9.0",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10"
+  },
+  "dependencies": {}
+}
