@@ -5,7 +5,7 @@
   <li>The source is written in ES6 format.</li>
 </ul>
 
-#todo
+# todo
 
 - [ ] add event delegation
 - [ ] add event trigger
