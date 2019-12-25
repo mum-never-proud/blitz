@@ -1,27 +1,6 @@
 import each from "../util/each";
 import eventStore from '../priv-data/event-store';
 
-// let eventStore = {};
-
-// const removeEventFromStore = event => {
-//   let combinedEvents = [];
-
-//   if (eventStore[event]) {
-//     combinedEvents = combinedEvents.concat(eventStore[event]);
-//     eventStore[event].length = 0;
-//   }
-//   else {
-//     let _event;
-
-//     for (_event in eventStore) {
-//       combinedEvents = combinedEvents.concat(eventStore[_event]);
-//       eventStore[_event].length = 0;
-//     }
-//   }
-
-//   return combinedEvents;
-// };
-
 export function on(eventType, callback) {
   each(this.elements, element => element.addEventListener(eventType, callback));
 
