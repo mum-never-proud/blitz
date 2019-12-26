@@ -16,17 +16,19 @@ class Blitz {
 
     return this;
   }
-
-  get length() {
-    return this.elements.length;
-  }
 }
 
 const $ = function(selector) {
   return new Blitz(selector);
 }
 
-extend(Blitz.prototype, css, klass, html, attr, dom, events, val);
+$.fn = Blitz.prototype = {
+  get length() {
+    return this.elements.length;
+  }
+};
+
+extend($.fn, css, klass, html, attr, dom, events, val);
 extend($, { extend });
 
 export default $;

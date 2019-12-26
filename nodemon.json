@@ -1,0 +1,16 @@
+{
+  "events": {
+    "restart": "./node_modules/.bin/webpack"
+  },
+  "ignore": [
+    ".git",
+    "node_modules/**",
+    "__tests__/**",
+    "*.json",
+    ".babelrc",
+    "*.md",
+    "*.config.js",
+    "dist/**",
+    "docs/**"
+  ]
+}

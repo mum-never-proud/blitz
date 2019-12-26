@@ -12,3 +12,4 @@ Checkout out the <a href="https://mum-never-proud.github.io/blitz/">Blitz Demo</
 
 - [ ] add event delegation
 - [ ] add event trigger
+- [ ] listen to events once, twice, thrice
