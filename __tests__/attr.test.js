@@ -1,24 +1,20 @@
 import $ from '../src/blitz';
 
-describe('attr', function() {
-  let blitzContainer;
-
-  beforeEach(function() {
+describe('attr', () => {
+  beforeEach(() => {
     document.body.innerHTML = '<div id ="blitz-container" title="replaceable title">replaceable content</div>';
   });
 
-  test('should replace content of an element', function() {
+  test('should replace content of an element', () => {
     const text = 'blitz test text';
-
-    blitzContainer = $('#blitz-container');
+    const blitzContainer = $('#blitz-container');
 
     blitzContainer.attr('title', text);
-    expect(blitzContainer.elements[0].getAttribute('title')).toEqual(text);
+
+    expect(blitzContainer.attr('title')).toEqual(text);
   });
 
-  test('should add multiple classes', function() {
-    blitzContainer = $('#blitz-container');
-
-    expect(blitzContainer.attr('title')).toEqual('replaceable title');
+  test('should add multiple classes', () => {
+    expect($('#blitz-container').attr('title')).toEqual('replaceable title');
   });
 });

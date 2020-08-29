@@ -1,41 +1,41 @@
 import querySelector from '../src/util/query-selector';
 
-describe('selector', function() {
-  beforeEach(function() {
-    document.body.innerHTML = '<div id="blitz-container" class="blitz-container" />';
+describe('selector', () => {
+  beforeEach(() => {
+    document.body.innerHTML = '<div id="blitz-container" class="blitz-container"></div>';
   });
 
-  test('select element by id', function() {
+  test('select element by id', () => {
     expect(querySelector('#blitz-container').length).toEqual(1);
   });
 
-  test('selects only one element by id', function() {
-    document.body.innerHTML += '<div id="blitz-container" />';
+  test('selects only one element by id', () => {
+    document.body.innerHTML += '<div id="blitz-container"></div>';
 
     expect(querySelector('#blitz-container').length).toEqual(1);
   });
 
-  test('select all elements by classname', function() {
-    document.body.innerHTML += '<div class="blitz-container" />';
+  test('select all elements by classname', () => {
+    document.body.innerHTML += '<div class="blitz-container"></div>';
 
     expect(querySelector('.blitz-container').length).toEqual(2);
   });
 
-  test('select all elements by tagname', function() {
-    document.body.innerHTML += '<div />';
+  test('select all elements by tagname', () => {
+    document.body.innerHTML += '<div></div>';
 
     expect(querySelector('div').length).toEqual(2);
   });
 
-  test('complex queries', function() {
-    document.body.innerHTML = '<div data-info="blitz-info" />';
-    document.body.innerHTML += '<div id="blitz-container"><p id="blitz-para" /></div>'
+  test('complex queries', () => {
+    document.body.innerHTML = '<div data-info="blitz-info"></div>';
+    document.body.innerHTML += '<div id="blitz-container"><p id="blitz-para"></p></div>';
 
     expect(querySelector('[data-info="blitz-info"]').length).toEqual(1);
     expect(querySelector('#blitz-container>#blitz-para').length).toEqual(1);
   });
 
-  test('returns empty array when element not in DOM', function() {
+  test('returns empty array when element not in DOM', () => {
     expect(querySelector('p').length).toEqual(0);
   });
 });

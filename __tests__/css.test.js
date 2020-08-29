@@ -1,29 +1,32 @@
 import $ from '../src/blitz';
 
-describe('css', function() {
-  let blitzContainer;
-
-  beforeEach(function() {
-    document.body.innerHTML = '<div id ="blitz-container" />';
-    blitzContainer = $('#blitz-container');
+describe('css', () => {
+  beforeEach(() => {
+    document.body.innerHTML = '<div id ="blitz-container"></div>';
   });
 
-  describe('both params are present', function() {
-    test('should set background to red', function() {
+  describe('two params are present', () => {
+    test('should set background to red', () => {
+      const blitzContainer = $('#blitz-container');
+
       blitzContainer.css('background', 'red');
 
-      expect(blitzContainer.elements[0].style.background).toEqual('red');
+      expect(blitzContainer.css('background')).toEqual('red');
     });
   });
 
-  describe('when one param is present', function() {
-    test('should return value param type is a string', function() {
+  describe('one param is present', () => {
+    test('should return value param type is a string', () => {
+      const blitzContainer = $('#blitz-container');
+
       blitzContainer.css('background', 'red');
 
       expect(blitzContainer.css('background')).toEqual('red');
     });
 
-    test('should set style when param type is an object', function() {
+    test('should set style when param type is an object', () => {
+      const blitzContainer = $('#blitz-container');
+
       blitzContainer.css({ background: 'red', color: 'white' });
 
       expect(blitzContainer.css('background')).toEqual('red');
