@@ -1,6 +1,6 @@
-import each from './each';
-import events from '../constants/events';
-import eventStore from '../priv-data/event-store';
+import each from 'utils/each';
+import events from 'constants/events';
+import eventStore from 'priv-data/event-store';
 
 let uid = 1;
 

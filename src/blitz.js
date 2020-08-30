@@ -1,3 +1,3 @@
-import $ from './core';
+import $ from 'src/core';
 
 export default $;

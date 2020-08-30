@@ -1,4 +1,4 @@
-import $ from '../src/blitz';
+import $ from 'src/blitz';
 
 describe('css', () => {
   beforeEach(() => {

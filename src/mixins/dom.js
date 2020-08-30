@@ -1,5 +1,5 @@
-import each from '../util/each';
-import normalizeCollection from '../util/normalize-collection';
+import each from 'utils/each';
+import normalizeCollection from 'utils/normalize-collection';
 
 const eachReverse = (collection, callback) => {
   const normalizedCollection = normalizeCollection(collection);

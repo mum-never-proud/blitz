@@ -1,4 +1,4 @@
-import querySelector from '../src/util/query-selector';
+import querySelector from 'utils/query-selector';
 
 describe('selector', () => {
   beforeEach(() => {

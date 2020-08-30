@@ -1,4 +1,4 @@
-import normalizeCollection from './normalize-collection';
+import normalizeCollection from 'utils/normalize-collection';
 
 export default function querySelector(selector, context = document) {
   const simpleSelector = /^[.#]?[\w-]*$/g;

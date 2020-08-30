@@ -1,4 +1,4 @@
-import each from '../util/each';
+import each from 'utils/each';
 
 const applyStyle = (element, prop, value) => {
   element.style[prop] = value;

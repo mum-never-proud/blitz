@@ -1,5 +1,5 @@
-import each from '../util/each';
-import { addEvent, removeEvent } from '../util/event-manager';
+import each from 'utils/each';
+import { addEvent, removeEvent } from 'utils/event-manager';
 
 export function on(eventName, callback) {
   each(this.elements, (element) => addEvent(element, eventName, callback));

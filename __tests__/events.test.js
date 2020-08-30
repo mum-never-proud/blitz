@@ -1,4 +1,4 @@
-import $ from '../src/blitz';
+import $ from 'src/blitz';
 
 const createMouseEvent = (eventType) => new MouseEvent(eventType, { bubbles: true });
 

@@ -1,4 +1,4 @@
-import $ from '../src/blitz';
+import $ from 'src/blitz';
 
 function createElement(elementType, options) {
   const element = document.createElement(elementType);

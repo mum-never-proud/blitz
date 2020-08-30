@@ -1,4 +1,4 @@
-import each from './each';
+import each from 'utils/each';
 
 function extend(target, ...sources) {
   if (typeof target === 'string') {

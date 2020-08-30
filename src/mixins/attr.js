@@ -1,4 +1,4 @@
-import each from '../util/each';
+import each from 'utils/each';
 
 export function attr(name, content) {
   if (!content) {
