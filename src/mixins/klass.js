@@ -1,29 +1,41 @@
 import each from '../util/each';
 
-export const addClass = function(...classes) {
-  const joinClass = classes.join(' ');
-  each(this.elements, element => element.className = `${element.className} ${joinClass}`.trimLeft());
+export function addClass(...classes) {
+  each(this.elements, (element) => {
+    const oldClasses = element.className.split(' ');
 
-  return this;
-};
+    each(classes, (klass) => {
+      if (!oldClasses.includes(klass)) {
+        oldClasses.push(klass);
+      }
+    });
 
-export const removeClass = function(...classes) {
-  each(this.elements, element => {
-    let elementClasses = element.className.split(' ');
-
-    each(classes, klass => elementClasses.splice(elementClasses.indexOf(klass), 1));
-    element.className = elementClasses.join(' ');
+    element.className = oldClasses.join(' ').trim();
   });
 
   return this;
-};
+}
 
-export const hasClass = function(klass) {
-  return this.elements[0].className.indexOf(klass) >= 0;
-};
+export function removeClass(...classes) {
+  each(this.elements, (element) => {
+    const elementClasses = element.className.split(' ');
 
-export const toggleClass = function(klass) {
-  this.hasClass(klass) ? this.removeClass(klass) : this.addClass(klass);
+    element.className = elementClasses.filter((elementClass) => !classes.includes(elementClass)).join(' ').trim();
+  });
 
   return this;
-};
+}
+
+export function hasClass(klass) {
+  return this.elements[0].className.indexOf(klass) >= 0;
+}
+
+export function toggleClass(klass) {
+  if (this.hasClass(klass)) {
+    this.removeClass(klass);
+  } else {
+    this.addClass(klass);
+  }
+
+  return this;
+}

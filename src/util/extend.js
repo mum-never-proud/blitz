@@ -1,26 +1,23 @@
-const isArray = obj => obj.constructor.name === 'Array';
+import each from './each';
 
 function extend(target, ...sources) {
-  let prop;
-
   if (typeof target === 'string') {
     throw Error('target not a valid object');
   }
 
   if (sources.length) {
-    sources.forEach(source => {
-      for (prop in source) {
+    sources.forEach((source) => {
+      each(Object.keys(source), (prop) => {
         target[prop] = source[prop];
-      }
+      });
     });
 
     return target;
   }
-  else {
-    const args = isArray(target) ?  target : [target];
 
-    return extend(this.fn, ...args);
-  }
+  const args = Array.isArray(target) ? target : [target];
+
+  return extend(this, ...args);
 }
 
 export default extend;

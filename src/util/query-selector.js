@@ -7,20 +7,22 @@ export default function querySelector(selector, context = document) {
   if (simpleSelector.test(selector)) {
     if (selector[0] === '#') {
       const element = context.getElementById(selector.slice(1));
+
       if (element) {
         elements.push(element);
       }
-    }
-    else if (selector[0] === '.') {
+    } else if (selector[0] === '.') {
       elements = normalizeCollection(context.getElementsByClassName(selector.slice(1)));
-    }
-    else {
+    } else {
       elements = normalizeCollection(context.getElementsByTagName(selector));
     }
-  }
-  else {
+  } else if (selector instanceof HTMLCollection) {
+    elements = normalizeCollection(selector);
+  } else if (selector.nodeType) {
+    elements = [selector];
+  } else {
     elements = normalizeCollection(context.querySelectorAll(selector));
   }
 
   return elements;
-};
+}

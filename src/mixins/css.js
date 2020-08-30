@@ -4,19 +4,18 @@ const applyStyle = (element, prop, value) => {
   element.style[prop] = value;
 };
 
-export const css = function(prop, value) {
+export function css(prop, value) {
   if (typeof prop === 'string') {
     if (!value) {
       return this.elements[0].style[prop];
     }
-    each(this.elements, element => applyStyle(element, prop, value));
-  }
-  else if (typeof prop === 'object') {
-    let key;
-    for (key in prop) {
-      each(this.elements, element => applyStyle(element, key, prop[key]));
-    }
+
+    each(this.elements, (element) => applyStyle(element, prop, value));
+  } else if (typeof prop === 'object') {
+    each(Object.keys(prop), (propName) => {
+      each(this.elements, (element) => applyStyle(element, propName, prop[propName]));
+    });
   }
 
   return this;
-};
+}

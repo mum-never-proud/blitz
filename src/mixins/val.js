@@ -5,7 +5,9 @@ export function val(content) {
     return this.elements[0].value;
   }
 
-  each(this.elements, element => element.value = content);
+  each(this.elements, (element) => {
+    element.value = content;
+  });
 
   return this;
-};
+}
