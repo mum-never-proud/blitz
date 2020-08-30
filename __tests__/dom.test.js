@@ -17,16 +17,7 @@ describe('dom', () => {
       document.body.innerHTML = '<div id="blitz-parent-container"><div id="blitz-container"></div></div>';
     });
 
-    it('should append element of type "node"', () => {
-      const newNode = createElement('p', { id: 'new-node' });
-      const blitzParent = $('#blitz-parent-container');
-
-      blitzParent.append(newNode);
-
-      expect(document.getElementById('blitz-parent-container').lastChild).toBe(newNode);
-    });
-
-    it('should prepend element of type "node"', () => {
+    it('should place element(s) at the beginning of each element in the collection', () => {
       const blitzParent = $('#blitz-parent-container');
 
       blitzParent.prepend('<p id="new-node"></p>');
@@ -34,23 +25,17 @@ describe('dom', () => {
       expect(document.getElementById('blitz-parent-container').firstChild.id).toBe('new-node');
     });
 
-    it('should prepend all the elements in a collection', () => {
-      const collection = ['<p id = "new-node-1"></p>', createElement('p', { id: 'new-node-2' })];
+    it('should place HTML String at the beginning of each element in the collection', () => {
       const blitzParent = $('#blitz-parent-container');
 
-      blitzParent.prepend(collection);
+      blitzParent.prepend('<p id="new-node"></p>');
 
-      expect(document.getElementById('blitz-parent-container').children[0].id).toBe('new-node-1');
-      expect(document.getElementById('blitz-parent-container').children[1].id).toBe('new-node-2');
+      expect(document.getElementById('blitz-parent-container').firstChild.id).toBe('new-node');
     });
 
-    it('should prepend in absence of children', () => {
-      $('#blitz-container').remove();
-
-      const blitzParent = $('#blitz-parent-container');
+    it('should place array of elements at the beginning of each element in the collection', () => {
       const collection = ['<p id = "new-node-1"></p>', createElement('p', { id: 'new-node-2' })];
-
-      expect(blitzParent.children().length).toEqual(0);
+      const blitzParent = $('#blitz-parent-container');
 
       blitzParent.prepend(collection);
 
@@ -64,7 +49,7 @@ describe('dom', () => {
       document.body.innerHTML = '<div id="blitz-parent-container"><div id="blitz-container"></div></div>';
     });
 
-    it('should append element of type "node"', () => {
+    it('should append element(s) to each element in the collection', () => {
       const newNode = createElement('p', { id: 'new-node' });
       const blitzParent = $('#blitz-parent-container');
 
@@ -73,7 +58,7 @@ describe('dom', () => {
       expect(document.getElementById('blitz-parent-container').lastChild).toBe(newNode);
     });
 
-    it('should append element of type "string"', () => {
+    it('should append HTML String to each element in the collection', () => {
       const blitzParent = $('#blitz-parent-container');
 
       blitzParent.append('<p id="new-node"></p>');
@@ -81,7 +66,7 @@ describe('dom', () => {
       expect(document.getElementById('blitz-parent-container').lastChild.id).toBe('new-node');
     });
 
-    it('should append all the elements in a collection', () => {
+    it('should append array of elements to each element in the collection', () => {
       const collection = ['<p id = "new-node-1"></p>', createElement('p', { id: 'new-node-2' })];
       const blitzParent = $('#blitz-parent-container');
 
@@ -90,20 +75,6 @@ describe('dom', () => {
       expect(document.getElementById('blitz-parent-container').children[1].id).toBe('new-node-1');
       expect(document.getElementById('blitz-parent-container').children[2].id).toBe('new-node-2');
     });
-
-    it('should append in absence of children', () => {
-      $('#blitz-container').remove();
-
-      const collection = ['<p id = "new-node-1"></p>', createElement('p', { id: 'new-node-2' })];
-      const blitzParent = $('#blitz-parent-container');
-
-      expect(blitzParent.children().length).toEqual(0);
-
-      blitzParent.append(collection);
-
-      expect(document.getElementById('blitz-parent-container').children[0].id).toBe('new-node-1');
-      expect(document.getElementById('blitz-parent-container').children[1].id).toBe('new-node-2');
-    });
   });
 
   describe('before', () => {
@@ -111,7 +82,7 @@ describe('dom', () => {
       document.body.innerHTML = '<div id="blitz-parent-container"></div>';
     });
 
-    it('should insert element before of type "node"', () => {
+    it('should place element(s) before each element in the collection', () => {
       const newNode = createElement('p', { id: 'new-node' });
       const blitzParent = $('#blitz-parent-container');
 
@@ -120,13 +91,13 @@ describe('dom', () => {
       expect(document.body.firstChild).toBe(newNode);
     });
 
-    it('should insert element before of type "string"', () => {
+    it('should place HTML String before each element in the collection', () => {
       $('#blitz-parent-container').before('<p id="new-node"></p>');
 
       expect(document.body.firstChild.id).toBe('new-node');
     });
 
-    it('should insert all the elements before in a collection', () => {
+    it('should place array of elements before each element in the collection', () => {
       const collection = ['<p id = "new-node-1"></p>', createElement('p', { id: 'new-node-2' })];
 
       $('#blitz-parent-container').before(collection);
@@ -141,21 +112,21 @@ describe('dom', () => {
       document.body.innerHTML = '<div id="blitz-parent-container"></div>';
     });
 
-    it('should insert element after of type "node"', () => {
+    it('should place element(s) after each element in the collection', () => {
       const newNode = createElement('p', { id: 'new-node' });
 
       $('#blitz-parent-container').after(newNode);
 
-      expect(document.body.lastChild).toBe(newNode);
+      expect(document.body.lastChild.id).toBe('new-node');
     });
 
-    it('should insert element after of type "string"', () => {
+    it('should place HTML String after each element in the collection', () => {
       $('#blitz-parent-container').after('<p id="new-node"></p>');
 
       expect(document.body.lastChild.id).toBe('new-node');
     });
 
-    it('should insert all the elements after in a collection', () => {
+    it('should place array of elements after each element in the collection', () => {
       const collection = ['<p id = "new-node-1"></p>', createElement('p', { id: 'new-node-2' })];
 
       $('#blitz-parent-container').after(collection);
@@ -166,20 +137,27 @@ describe('dom', () => {
   });
 
   describe('misc', () => {
-    it('should list the children', () => {
+    it('should get children of the first element in the collection', () => {
       document.body.innerHTML = '<div id="blitz-parent-container"><div id="blitz-container-1"></div><div id="blitz-container-2"></div></div></div>';
 
       expect($('#blitz-parent-container').children().length).toEqual(2);
     });
 
-    it('should list the child nodes', () => {
+    it('should get child nodes of the first element in the collection', () => {
       // child nodes include textNodes as well
       document.body.innerHTML = '<div id="blitz-parent-container">Hello <div id="blitz-container-1"></div><div id="blitz-container-2"></div></div>';
 
       expect($('#blitz-parent-container').childNodes().length).toEqual(3);
     });
 
-    it('should slice the nth element from selected elements', () => {
+    it('should check if the first element in the collection contains the given element', () => {
+      document.body.innerHTML = '<div id="blitz-parent-container">Hello <div id="blitz-container-1"></div><div id="blitz-container-2"></div></div>';
+
+      expect($('#blitz-parent-container').contains(document.getElementById('blitz-container-1'))).toBeTruthy();
+      expect($('#blitz-parent-container').contains(document.body)).toBeFalsy();
+    });
+
+    it('should slice the nth element from the collection', () => {
       document.body.innerHTML = '<div></div><div id="sliced-element"></div><div></div>';
 
       const div = $('div');

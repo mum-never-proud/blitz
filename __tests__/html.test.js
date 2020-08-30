@@ -5,7 +5,7 @@ describe('klass', () => {
     document.body.innerHTML = '<div id ="blitz-container">replaceable content</div>';
   });
 
-  test('should replace content of an element', () => {
+  test('should set the HTML contents for each element in the collection', () => {
     const text = 'blitz test text';
     const blitzContainer = $('#blitz-container');
 
@@ -14,7 +14,7 @@ describe('klass', () => {
     expect(blitzContainer.elements[0].innerHTML).toEqual(text);
   });
 
-  test('should get content of an element', () => {
+  test('should get the HTML contents of the first element in the collection', () => {
     expect($('#blitz-container').html()).toEqual('replaceable content');
   });
 });

@@ -12,7 +12,7 @@ describe('events', () => {
     mockFx = jest.fn();
   });
 
-  it('should add an event listener to all the selected elements', () => {
+  it('should add an event listener to all the element(s) in the collection', () => {
     blitzContainer.on('click', mockFx);
     blitzContainer.elements[0].click();
     blitzContainer.elements[1].click();
@@ -21,7 +21,7 @@ describe('events', () => {
     expect(mockFx).toHaveBeenCalledTimes(2);
   });
 
-  it('should remove all event listeners', () => {
+  it('should remove all event listeners of all the element(s) in the collection', () => {
     blitzContainer.on('click', mockFx);
     blitzContainer.on('dblclick', mockFx);
     blitzContainer.off();
@@ -32,7 +32,7 @@ describe('events', () => {
     expect(mockFx).not.toBeCalled();
   });
 
-  it('should remove "selected" event from the element', () => {
+  it('should remove "selected" event of all the element(s) in the collection', () => {
     blitzContainer.on('click', mockFx);
     blitzContainer.on('dblclick', mockFx);
     blitzContainer.off('click');
@@ -43,7 +43,7 @@ describe('events', () => {
     expect(mockFx).toHaveBeenCalledTimes(1);
   });
 
-  it('should remove "selected" event callback from the element', () => {
+  it('should remove "selected" event callback of all the element(s) in the collection', () => {
     const mockFx2 = jest.fn();
 
     blitzContainer.on('click', mockFx);

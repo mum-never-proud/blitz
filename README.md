@@ -116,6 +116,8 @@ $('.blitz').html('<p>blitz.js</p>'); // set
 
 > attr
 
+Get the value of an attribute for the first element, or set an attribute for each element in the collection.
+
 ```javascript
 $('.blitz').attr('attrName'); // get
 $('.blitz').attr('attrName', 'attrValue'); // set
@@ -125,7 +127,7 @@ $('.blitz').attr('attrName', 'attrValue'); // set
 
 > addClass
 
-Add then given class(es) to each element in the collection.
+Add the given class(es) to each element in the collection.
 
 ```javascript
 $('.blitz').addClass('foo', 'bar');
@@ -188,7 +190,7 @@ $('.blitz.input').val('some value'); // set
 
 > extend
 
-Extends the properties of an object from the given sources, or extends blitz when no source is given.
+Extend the properties of an object from the given sources, or extend blitz when no source is given.
 
 ```javascript
 $.extend(targetObject, [, sourceObjects]);

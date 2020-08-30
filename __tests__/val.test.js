@@ -5,7 +5,7 @@ describe('val', () => {
     document.body.innerHTML = '<input id ="blitz-input" type="text" value="replaceable content"></div>';
   });
 
-  test('should replace content of an element', () => {
+  test('should set the value of each element in the collection', () => {
     const text = 'blitz test text';
     const blitzInput = $('#blitz-input');
 
@@ -14,7 +14,7 @@ describe('val', () => {
     expect(blitzInput.elements[0].value).toEqual(text);
   });
 
-  test('should get content of an element', () => {
+  test('should get the value from the first element in the collection', () => {
     const blitzInput = $('#blitz-input');
 
     expect(blitzInput.val()).toEqual('replaceable content');

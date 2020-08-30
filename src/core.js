@@ -26,7 +26,7 @@ Blitz.prototype = {
 };
 $.fn = Blitz.prototype;
 
-extend($.fn, css, klass, html, attr, dom, events, val, { extend });
+extend($.fn, css, klass, html, attr, dom, events, val);
 extend($, { extend });
 attachListeners();
 

@@ -6,7 +6,7 @@ describe('css', () => {
   });
 
   describe('two params are present', () => {
-    test('should set background to red', () => {
+    test('should set style for each element in the collection', () => {
       const blitzContainer = $('#blitz-container');
 
       blitzContainer.css('background', 'red');
@@ -16,7 +16,7 @@ describe('css', () => {
   });
 
   describe('one param is present', () => {
-    test('should return value param type is a string', () => {
+    test('should get the value of a style property for the first element', () => {
       const blitzContainer = $('#blitz-container');
 
       blitzContainer.css('background', 'red');
@@ -24,7 +24,7 @@ describe('css', () => {
       expect(blitzContainer.css('background')).toEqual('red');
     });
 
-    test('should set style when param type is an object', () => {
+    test('should set multiple style properties for each element in the collection', () => {
       const blitzContainer = $('#blitz-container');
 
       blitzContainer.css({ background: 'red', color: 'white' });

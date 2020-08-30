@@ -1,8 +1,8 @@
 import $ from 'src/blitz';
 
-describe('extend', () => {
+describe('source(s) provided', () => {
   describe('any object', () => {
-    it('should extend any object when multiple arguments are passed', () => {
+    it('should extend the given object when one or more sources are provided', () => {
       const obj = {};
 
       expect(obj.tootltip).toEqual(undefined);
@@ -13,8 +13,8 @@ describe('extend', () => {
     });
   });
 
-  describe('blitz object', () => {
-    it('should extend blitz when single argument is passed', () => {
+  describe('no soruce(s) provided', () => {
+    it('should extend blitz', () => {
       expect($.tooltip).toEqual(undefined);
       $.extend({ tooltip: () => {} });
       expect($.tooltip).not.toEqual(undefined);
@@ -22,7 +22,7 @@ describe('extend', () => {
   });
 
   describe('extending a string', () => {
-    it('should throw error on extending string', () => {
+    it('should throw error on extending non object', () => {
       expect(() => $.extend('blitz', 'blitz')).toThrow(Error);
     });
   });

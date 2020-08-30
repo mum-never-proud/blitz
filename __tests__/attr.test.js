@@ -5,7 +5,7 @@ describe('attr', () => {
     document.body.innerHTML = '<div id ="blitz-container" title="replaceable title">replaceable content</div>';
   });
 
-  test('should replace content of an element', () => {
+  test('should set an attribute for each element in the collection', () => {
     const text = 'blitz test text';
     const blitzContainer = $('#blitz-container');
 
@@ -14,7 +14,7 @@ describe('attr', () => {
     expect(blitzContainer.attr('title')).toEqual(text);
   });
 
-  test('should add multiple classes', () => {
+  test('should get the value of an attribute for the first element', () => {
     expect($('#blitz-container').attr('title')).toEqual('replaceable title');
   });
 });
