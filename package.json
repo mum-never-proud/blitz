@@ -1,11 +1,11 @@
 {
   "name": "blitz",
   "version": "1.0.0",
-  "description": "lite version of jQuery",
+  "description": "Small, fast, and modular DOM & Event library for modern browsers.",
   "main": "./dist/blitz.min.js",
   "scripts": {
     "build": "webpack",
-    "dev": "nodemon --exec 'npm run build'",
+    "dev": "webpack --watch --mode=development",
     "test": "jest",
     "test-coverage": "jest --coverage"
   },
@@ -37,7 +37,6 @@
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jest": "23.20.0",
     "jest": "24.9.0",
-    "nodemon": "2.0.4",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10"
   },
