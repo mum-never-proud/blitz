@@ -198,7 +198,7 @@ $.extend(plugin);
 $.extend([, plugins]);
 ```
 
-## todo
+## Todo
 
 - [ ] event delegation.
 - [ ] event trigger.
