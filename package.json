@@ -38,7 +38,7 @@
     "eslint-plugin-jest": "23.20.0",
     "jest": "24.9.0",
     "webpack": "4.41.2",
-    "webpack-cli": "3.3.10"
+    "webpack-cli": "3.3.12"
   },
   "dependencies": {
     "path": "0.12.7"
